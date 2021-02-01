@@ -1,0 +1,16 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.all {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+.container {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex; flex-wrap: wrap;
+  }

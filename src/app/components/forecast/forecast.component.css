@@ -1,0 +1,6 @@
+p {
+    background: #f4f4f4;
+    padding: 10px;
+    /* width: 100%; */
+    border-bottom: 1px #ccc dotted;
+}

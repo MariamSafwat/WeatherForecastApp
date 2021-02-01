@@ -1,0 +1,14 @@
+h1{
+    
+	font-size: 40px;
+	/* width: 100%; */
+    color: #1e3129;
+    background-color: cadetblue;
+	text-align: center;
+	text-shadow: 4px 4px 4px #ffffff;
+	
+    padding: 10px; 
+    
+    
+    font-family: 'Fredoka One', cursive;
+}

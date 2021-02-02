@@ -14,15 +14,10 @@ export class WeatherService {
     this.apiUrl = 'https://api.worldweatheronline.com/premium/v1/weather.ashx';
    }
    
-  getWeatherData() {
-    return this.http.get(this.apiUrl + '?key=' + this.apikey + '&q=Egypt' + '&format=json');
-    //return this.http.get('&q=Egypt&format=json&num_of_days=5');
+  getWeatherData(ipAddress:any) {
+    //console.log(this.apiUrl + '?key=' + this.apikey + '&q=' + ipAddress + '&format=json');
+    return this.http.get(this.apiUrl + '?key=' + this.apikey + '&q=' + ipAddress + '&format=json');
   }
 
   
 }
-
-  
-
-  
-

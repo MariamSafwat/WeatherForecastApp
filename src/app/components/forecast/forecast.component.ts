@@ -14,6 +14,12 @@ import { IpServiceService } from '../../services/ip-service.service';
 export class ForecastComponent implements OnInit {
   weatherData:any;
   ipAddress:any;
+  city:any;
+  country:any;
+  x:any;
+  isDay:any;
+  sunset:any;
+  timeNow:any;
   // lat:any;
   // lng:any;  
 
@@ -33,7 +39,7 @@ export class ForecastComponent implements OnInit {
     // this.getLocation();
     this.getIPfunc();
     //this.getWeatherFunc();
-  
+    
     
   }
 
@@ -41,6 +47,11 @@ export class ForecastComponent implements OnInit {
   getIPfunc(){
     this.ip.getIpAddress().subscribe((res:any)=>{  
       this.ipAddress=res.ip;  
+      this.city=res.city;
+      this.country=res.country;
+      console.log(res);
+      console.log(this.city);
+      console.log(this.ipAddress)
       this.getWeatherFunc();
     });  
   }
@@ -50,10 +61,27 @@ export class ForecastComponent implements OnInit {
       response => {
         console.log(response);
         this.weatherData = response;
+        this.setData();
+
       }
     )
+  }
 
+  setData(){
+    this.x = this.weatherData.data.current_condition[0].temp_C;
+    this.sunset = this.weatherData.data.weather[0].astronomy[0].sunset;
+    
+    console.log(this.sunset);
+    
+    let currentDate = new Date();
+    let currentTime = currentDate.toLocaleTimeString();
+    console.log(currentTime);
 
-   }
+    this.isDay = (currentTime < this.sunset); //TODO test this at day time
+    
+    console.log(this.isDay);
+  }
+
+  
 
 }

@@ -19,7 +19,7 @@ export class IpServiceService {
 
   public getIpAddress() {
     //console.log(this.http.get("http://api.ipify.org/?format=json"));
-    return this.http.get("http://api.ipify.org/?format=json");
+    return this.http.get("http://ipinfo.io?token=b9d2723680ba12");
   }
 
   

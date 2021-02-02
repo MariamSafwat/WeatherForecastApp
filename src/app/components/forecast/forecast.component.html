@@ -1,8 +1,13 @@
-<div >
-    <p id="demo">forecast works!</p>
+<div id="divWeatherMain" >
+    <div class="weatherWidgetRow"  id="temp"><strong>{{ x }}°</strong></div>
+    <div class="weatherWidgetRow" *ngIf="weatherData" id="temp"><strong>{{ city }} , {{ country }}</strong></div>
+    <div class="weatherWidgetRow" *ngIf="weatherData" id="temp">{{ weatherData.data.current_condition[0].weatherDesc[0].value }}</div>
+    <div class="weatherWidgetRow" *ngIf="weatherData" id="temp">{{ weatherData.data.weather[0].mintempC }}° / {{ weatherData.data.weather[0].maxtempC }}°</div>
+    <div class="weatherWidgetRow" *ngIf="weatherData" id="temp">Humidity: {{ weatherData.data.current_condition[0].humidity }}%</div>
+    <div class="weatherWidgetRow" *ngIf="weatherData" id="feelsLike">Feels like: <strong>{{ weatherData.data.current_condition[0].FeelsLikeC }}°</strong></div>
     <!--<p>City:{{weatherData.city.name}}</p>-->
     <!--<p *ngIf="weatherData">City:<strong>{{ weatherData.data.request[0].query}}</strong></p>-->
-    <p>Your IP Address : {{ipAddress}}</p>
+    
     
     
 </div>

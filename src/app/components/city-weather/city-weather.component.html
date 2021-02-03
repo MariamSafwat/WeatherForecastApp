@@ -1,1 +1,13 @@
-<p>city-weather works!</p>
+<div id="divWeatherMain" >
+    <div class="weatherWidgetRow" *ngIf="cityWeather" id="temp"><strong>{{ cityWeather.data.current_condition[0].temp_C }}°</strong></div>
+    <div class="weatherWidgetRow" *ngIf="cityWeather" id="temp"><strong>{{ cityWeather.data.request[0].query }} </strong></div>
+    <div class="weatherWidgetRow" *ngIf="cityWeather" id="temp">{{ cityWeather.data.current_condition[0].weatherDesc[0].value }}</div>
+    <div class="weatherWidgetRow" *ngIf="cityWeather" id="temp">{{ cityWeather.data.weather[0].mintempC }}° / {{ cityWeather.data.weather[0].maxtempC }}°</div>
+    <div class="weatherWidgetRow" *ngIf="cityWeather" id="temp">Humidity: {{ cityWeather.data.current_condition[0].humidity }}%</div>
+    <div class="weatherWidgetRow" *ngIf="cityWeather" id="feelsLike">Feels like: <strong>{{ cityWeather.data.current_condition[0].FeelsLikeC }}°</strong></div>
+    <!--<p>City:{{weatherData.city.name}}</p>-->
+    <!--<p *ngIf="weatherData">City:<strong>{{ weatherData.data.request[0].query}}</strong></p>-->
+    
+    
+    
+</div>

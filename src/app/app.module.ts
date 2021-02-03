@@ -13,11 +13,16 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ForecastComponent } from './components/forecast/forecast.component';
 import { from } from 'rxjs';
+import { CityFormComponent } from './components/city-form/city-form.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes = [
   {
     path:'',component:ForecastComponent
   },
+  {
+    path:'forecast', component:ForecastComponent
+  }
   
 ];
 
@@ -25,12 +30,14 @@ const appRoutes = [
   declarations: [
     AppComponent,
     HeaderComponent,
-    ForecastComponent
+    ForecastComponent,
+    CityFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [WeatherService, IpServiceService],

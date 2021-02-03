@@ -45,6 +45,7 @@ export class ForecastComponent implements OnInit {
 
   
   getIPfunc(){
+    // get the user location details  
     this.ip.getIpAddress().subscribe((res:any)=>{  
       this.ipAddress=res.ip;  
       this.city=res.city;
@@ -57,6 +58,7 @@ export class ForecastComponent implements OnInit {
   }
 
   getWeatherFunc(){
+    // get the weather detials based on user location
     this._weatherService.getWeatherData(this.ipAddress).subscribe(
       response => {
         console.log(response);
@@ -68,6 +70,8 @@ export class ForecastComponent implements OnInit {
   }
 
   setData(){
+    // TODO 
+    // check this function
     this.x = this.weatherData.data.current_condition[0].temp_C;
     this.sunset = this.weatherData.data.weather[0].astronomy[0].sunset;
     

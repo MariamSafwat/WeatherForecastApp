@@ -36,6 +36,7 @@ export class ForecastComponent implements OnInit {
   // }
 
   ngOnInit(){
+    console.log('forecast called');
     // this.getLocation();
     this.getIPfunc();
     //this.getWeatherFunc();

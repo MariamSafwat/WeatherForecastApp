@@ -16,6 +16,8 @@ export class CityFormComponent implements OnInit {
   }
 
   DisplayCityWeather(){
+    console.log('city input:');
+    console.log(this.cityName);
     localStorage.setItem('cityName', JSON.stringify(this.cityName));
     this.router.navigate(['forecast']);
   }

@@ -1,5 +1,4 @@
 <div id="divWeatherMain" >
-    <div>forecast works</div>
     <div class="weatherWidgetRow"  id="temp"><strong>{{ x }}°</strong></div>
     <div class="weatherWidgetRow" *ngIf="weatherData" id="temp"><strong>{{ city }} , {{ country }}</strong></div>
     <div class="weatherWidgetRow" *ngIf="weatherData" id="temp">{{ weatherData.data.current_condition[0].weatherDesc[0].value }}</div>

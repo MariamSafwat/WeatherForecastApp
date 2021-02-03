@@ -20,6 +20,9 @@ export class ForecastComponent implements OnInit {
   isDay:any;
   sunset:any;
   timeNow:any;
+  cityValue:any;
+  value:any;
+
   // lat:any;
   // lng:any;  
 
@@ -37,6 +40,20 @@ export class ForecastComponent implements OnInit {
 
   ngOnInit(){
     console.log('forecast called');
+    console.log('original value');
+    
+    this.value = localStorage.getItem('added');
+    console.log(this.value);
+    if(this.value == "ok"){
+      console.log('entered');
+      this.cityValue = localStorage.getItem('cityName');
+      console.log(this.cityValue);
+    }
+    else{
+      console.log('not entered');
+    }
+    
+    
     // this.getLocation();
     this.getIPfunc();
     //this.getWeatherFunc();

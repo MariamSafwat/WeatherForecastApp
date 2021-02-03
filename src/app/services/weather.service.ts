@@ -19,5 +19,11 @@ export class WeatherService {
     return this.http.get(this.apiUrl + '?key=' + this.apikey + '&q=' + ipAddress + '&format=json');
   }
 
+  getWeather(city:any){
+    console.log(this.apiUrl + '?key=' + this.apikey + '&q=' + city + '&format=json');
+    return this.http.get(this.apiUrl + '?key=' + this.apikey + '&q=' + city + '&format=json');
+
+  }
+
   
 }

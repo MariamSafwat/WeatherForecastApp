@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { WeatherService } from '../../services/weather.service'
 
 @Component({
   selector: 'app-city-weather',
@@ -8,16 +9,30 @@ import { Router } from '@angular/router';
 })
 export class CityWeatherComponent implements OnInit {
 
-  value:any;
+  nameValue:any;
+  cityWeather:any;
 
-  constructor() { }
+  constructor(private _weatherService:WeatherService) { }
 
   ngOnInit(): void {
     console.log('in city weather');
-    this.value = localStorage.getItem('cityName');
+    this.nameValue = localStorage.getItem('cityName');
     
     console.log('city name in new component:');
-    console.log(this.value);
+    console.log(this.nameValue);
+    this.getCityWeather();
+  }
+
+  getCityWeather(){
+    // get the weather detials based on user input
+    this._weatherService.getWeather(this.nameValue).subscribe(
+      response => {
+        console.log(response);
+        this.cityWeather = response;
+        //this.setData();
+
+      }
+    )
   }
 
 }

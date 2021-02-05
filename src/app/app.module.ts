@@ -17,6 +17,7 @@ import { from } from 'rxjs';
 import { CityFormComponent } from './components/city-form/city-form.component';
 import { FormsModule } from '@angular/forms';
 import { CityWeatherComponent } from './components/city-weather/city-weather.component';
+import { PlotComponent } from './components/plot/plot.component';
 
 
 
@@ -26,7 +27,8 @@ import { CityWeatherComponent } from './components/city-weather/city-weather.com
     HeaderComponent,
     ForecastComponent,
     CityFormComponent,
-    CityWeatherComponent
+    CityWeatherComponent,
+    PlotComponent
   ],
   imports: [
     BrowserModule,

@@ -14,3 +14,20 @@
     margin-bottom: 20px;
     display: flex; flex-wrap: wrap;
   }
+
+button{
+    padding: 0.5em 0.75em;
+    margin: 0.5em 0.75em;
+    border: none;
+    border-radius: 5px;
+    background: #3b4a6b; 
+    color: #f0d43a;
+    font-size: 15px;
+}
+
+button:focus {
+    outline: none;
+}
+button:hover{
+    color: white;
+}

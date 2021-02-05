@@ -39,26 +39,13 @@ export class ForecastComponent implements OnInit {
   // }
 
   ngOnInit(){
-    console.log('forecast called');
-    console.log('original value');
-    
     this.value = localStorage.getItem('added');
-    console.log(this.value);
     if(this.value == "ok"){
-      console.log('entered');
       this.cityValue = localStorage.getItem('cityName');
-      console.log(this.cityValue);
-    }
-    else{
-      console.log('not entered');
-    }
-    
-    
+    } 
     // this.getLocation();
     this.getIPfunc();
-    //this.getWeatherFunc();
-    
-    
+       
   }
 
   
@@ -68,9 +55,7 @@ export class ForecastComponent implements OnInit {
       this.ipAddress=res.ip;  
       this.city=res.city;
       this.country=res.country;
-      console.log(res);
-      console.log(this.city);
-      console.log(this.ipAddress)
+      
       this.getWeatherFunc();
     });  
   }
@@ -79,7 +64,6 @@ export class ForecastComponent implements OnInit {
     // get the weather detials based on user location
     this._weatherService.getWeatherData(this.ipAddress).subscribe(
       response => {
-        console.log(response);
         this.weatherData = response;
         this.setData();
 
@@ -88,20 +72,11 @@ export class ForecastComponent implements OnInit {
   }
 
   setData(){
-    // TODO 
-    // check this function
-    
     this.sunset = this.weatherData.data.weather[0].astronomy[0].sunset;
     this.obsTime = this.weatherData.data.current_condition[0].observation_time;
-    console.log(this.sunset);
-    
-    console.log(this.obsTime);
-
+   
     this.isDay = (this.obsTime < this.sunset); //TODO test this at day time
-    
-    console.log(this.isDay);
   }
 
-  
 
 }

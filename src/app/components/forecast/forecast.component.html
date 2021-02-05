@@ -15,10 +15,6 @@
     <div class="weatherWidgetRow" *ngIf="weatherData" style="font-size: 20px;">{{ weatherData.data.weather[0].mintempC }}° / {{ weatherData.data.weather[0].maxtempC }}°</div>
     <div class="weatherWidgetRow" *ngIf="weatherData" style="font-size: 20px; margin-top: 10px;">Humidity: {{ weatherData.data.current_condition[0].humidity }}%</div>
     <div class="weatherWidgetRow" *ngIf="weatherData" style="font-size: 20px; margin-top: 10px;">Feels like: {{ weatherData.data.current_condition[0].FeelsLikeC }}°</div>
-    <!--<p>City:{{weatherData.city.name}}</p>-->
-    <!--<p *ngIf="weatherData">City:<strong>{{ weatherData.data.request[0].query}}</strong></p>-->
-    
-    
     
 </div>
 

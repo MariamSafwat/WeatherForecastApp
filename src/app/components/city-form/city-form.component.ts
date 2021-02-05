@@ -16,8 +16,8 @@ export class CityFormComponent implements OnInit {
   }
 
   DisplayCityWeather(){
-    console.log('city input:');
     console.log(this.cityName);
+    // check if user input city name then navigate to city weather
     if(this.cityName == null){
       alert('please enter city name');
     }

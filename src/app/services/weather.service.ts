@@ -20,7 +20,6 @@ export class WeatherService {
   }
 
   getWeather(city:any){
-    console.log(this.apiUrl + '?key=' + this.apikey + '&q=' + city + '&format=json');
     return this.http.get(this.apiUrl + '?key=' + this.apikey + '&q=' + city + '&format=json');
 
   }

@@ -10,17 +10,10 @@
         </div>
     </div>
 
-
     <div class="weatherWidgetRow" *ngIf="cityWeather" style="font-size: 32px;margin-top: 5px;"><strong>{{ cityWeather.data.current_condition[0].temp_C }}°</strong></div>
     <div class="weatherWidgetRow" *ngIf="cityWeather" style="font-size: 32px;margin-top: 5px;"><strong>{{ cityWeather.data.request[0].query }} </strong></div>
     <div class="weatherWidgetRow" *ngIf="cityWeather" style="font-size: 32px;margin-top: 5px;">{{ cityWeather.data.current_condition[0].weatherDesc[0].value }}</div>
     <div class="weatherWidgetRow" *ngIf="cityWeather" style="font-size: 20px;">{{ cityWeather.data.weather[0].mintempC }}° / {{ cityWeather.data.weather[0].maxtempC }}°</div>
     <div class="weatherWidgetRow" *ngIf="cityWeather" style="font-size: 20px; margin-top: 10px;">Humidity: {{ cityWeather.data.current_condition[0].humidity }}%</div>
-    <div class="weatherWidgetRow" *ngIf="cityWeather" style="font-size: 20px; margin-top: 10px;">Feels like: <strong>{{ cityWeather.data.current_condition[0].FeelsLikeC }}°</strong></div>
-    <!--<p>City:{{weatherData.city.name}}</p>-->
-    <!--<p *ngIf="weatherData">City:<strong>{{ weatherData.data.request[0].query}}</strong></p>-->
-    
-    
-    
-    
+    <div class="weatherWidgetRow" *ngIf="cityWeather" style="font-size: 20px; margin-top: 10px;">Feels like: <strong>{{ cityWeather.data.current_condition[0].FeelsLikeC }}°</strong></div>    
 </div>

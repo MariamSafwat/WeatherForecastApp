@@ -11,6 +11,9 @@ export class CityWeatherComponent implements OnInit {
 
   nameValue:any;
   cityWeather:any;
+  sunset:any;
+  obsTime:any;
+  isDay:any;
 
   constructor(private _weatherService:WeatherService) { }
 
@@ -29,10 +32,25 @@ export class CityWeatherComponent implements OnInit {
       response => {
         console.log(response);
         this.cityWeather = response;
-        //this.setData();
+        this.setData();
 
       }
     )
+  }
+
+  setData(){
+    // TODO 
+    // check this function
+    
+    this.sunset = this.cityWeather.data.weather[0].astronomy[0].sunset;
+    this.obsTime = this.cityWeather.data.current_condition[0].observation_time;
+    console.log(this.sunset);
+    
+    console.log(this.obsTime);
+
+    this.isDay = true;// (this.obsTime < this.sunset); //TODO test this at day time
+    
+    console.log(this.isDay);
   }
 
 }

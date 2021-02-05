@@ -19,7 +19,7 @@ export class ForecastComponent implements OnInit {
   x:any;
   isDay:any;
   sunset:any;
-  timeNow:any;
+  obsTime:any;
   cityValue:any;
   value:any;
 
@@ -90,16 +90,14 @@ export class ForecastComponent implements OnInit {
   setData(){
     // TODO 
     // check this function
-    this.x = this.weatherData.data.current_condition[0].temp_C;
-    this.sunset = this.weatherData.data.weather[0].astronomy[0].sunset;
     
+    this.sunset = this.weatherData.data.weather[0].astronomy[0].sunset;
+    this.obsTime = this.weatherData.data.current_condition[0].observation_time;
     console.log(this.sunset);
     
-    let currentDate = new Date();
-    let currentTime = currentDate.toLocaleTimeString();
-    console.log(currentTime);
+    console.log(this.obsTime);
 
-    this.isDay = (currentTime < this.sunset); //TODO test this at day time
+    this.isDay = (this.obsTime < this.sunset); //TODO test this at day time
     
     console.log(this.isDay);
   }
